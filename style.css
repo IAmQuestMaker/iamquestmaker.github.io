@@ -1,0 +1,61 @@
+table {
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+  }
+  
+  th, td {
+    border: solid 1px #000;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  tr:nth-child(2n) {
+  background: #e600ff;
+  }
+  
+  tr:nth-child(2n+1) {
+  background: #00d0ff;
+  }
+  
+  tr:hover td{
+    background-color: #ff0022;
+  }
+  
+  
+  nav {
+    background-color:#5bad7f71;
+    padding:30px;
+  }
+  
+  header {
+    width:100%-10px;
+    background-color:#227296;
+    padding: 10px;
+    height:120px;
+  }
+  
+  div.main_body {
+    max-width:960px;
+    background-color:#d4499c;
+    margin: 0 auto;
+    margin-top:20px;
+    padding:10px;
+  
+  }
+  
+  footer{
+    width:100%-10px;
+    background-color:#3b2b0e;
+    padding: 10px;
+    height:60px;
+    margin-top:20px;
+  }
+  
+  #logo{
+    float:left;
+    margin:10px;
+    width:250px;
+    height:250px;
+  }
+  
