@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Мой проект</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body style="background-color: bisque;">
+    <header>
+      <img id="logo" stc="https://i.pinimg.com/736x/45/21/26/452126a1b2faf622db865962465c41e6.jpg" alt="strange_thing">
+      <nav>
+        <a href="#url">Ссылки</a>
+        <a href="#table">Таблица</a>
+        <a href="#form">Форма</a>
+      </nav>
+      <p>Мой проект</p>
+    </header>
+
+    <div class="main_body">
+      
+    <h1>Список ссылок</h1>
+    <ul id="url">
+        <li>
+          <h3><a href="http://kubsu.ru/">КубГУ по http</a></h3>
+          <!--№1-->
+        </li>
+        <li>
+          <h3><a href="https://kubsu.ru/">КубГУ по https</a></h3>
+          <!--№2-->
+        </li>
+        <li>
+          <a href="https:/kubsu.ru/"><img src="https://otvet.imgsmail.ru/download/19204353_25426468611c15ab768d17ce76bb1f06_800.jpg" width="500" height="500" alt="tap"></a>
+          <!--№3-->
+        </li>
+        <li>
+          <h3><a href="undergrownd.html">Сокращённая ссылка на внутреннюю страницу</a></h3>
+          <!--№4-->
+        </li>
+        <li>
+          <h3><a href="index.html">Сокращённая ссылка на главную страницу</a></h3>
+          <!--№5-->
+        </li>
+        <li>
+          <h3><a href="#Tik">Ссылка на фрагмент</a></h3>
+          <!--№6-->
+        </li>
+        <li>
+          <h3><a href="https://www.yandex.ru/search?text=wikipedia&lr=35&src=suggest_B">Ссылка с тремя параметрами</a></h3>
+          <!--№7-->
+        </li>
+        <li>
+          <h3><a href="https://www.youtube.com/watch?id=8800555">Ссылка с id</a></h3>
+          <!--№8-->
+        </li>
+        <li>
+          <h3><a href="undergrownd.html">Ссылка страницу в текущем каталоге</a></h3>
+          <!--№9-->
+        </li>
+        <li>
+          <h3><a href="about/a.html">Ссылка на элемент в about</a></h3>
+          <!--№10-->
+        </li>
+        <li>
+          <h3><a href="../about/a.html">Ссылка на элемент выше about</a></h3>
+          <!--№11-->
+        </li>
+        <li>
+          <h3><a href="../../about/a.html">Ссылка на элемент дважды выше about</a></h3>
+          <!--№12-->
+        </li>
+        <li>
+          <h3>Контекстная <a href="https://kubsu.ru/">ссылка</a> в абзаце</h3>
+          <!--№13-->
+        </li>
+        <li>
+          <h3><a href="https://ru.wikipedia.org/wiki/Азотная_кислота#Химические_свойства">Ссылка на фрагмент стороннего сайта</a></h3>
+          <!--№14-->
+        </li>
+        <li>
+          <img src="https://sun6-22.userapi.com/impg/zNdA-6voYi6NY9M6b_1ZTB7ctKlGGxTF-UCuwA/tzIhfHWK09s.jpg?size=604x410&quality=96&sign=367554c696e5406cc25ec13e9e462be2&type=album" width="900" height="675" alt="" usemap="#Tik">
+          <map name="Tik" id="Tik">
+            <area shape="circle" coords="675 270 90" href="https://kubsu.ru/" alt="s1">
+            <area shape="rect" coords="225 270 180 90" href="undergrownd.html" alt="s2">
+          </map>
+          <!--№15-->
+        </li>
+        <li>
+          <h3><a href="">Пустой href</a></h3>
+          <!--№16-->
+        </li>
+        <li>
+          <h3><a href="index" onclick="return false">Без href</a></h3>
+          <!--№17-->
+        </li>
+        <li>
+          <h3><a href="https://kubsu.ru/" rel="nofollow" target="_blank">Запрещённая для поисковиков</a></h3>
+          <!--№18-->
+        </li>
+        <li>
+          <!--noindex-->
+          <a href="https://kubsu.ru/">Запрещённая к индексированию</a>
+          <!--/noindex-->
+          <!--№19-->
+        </li>
+    </ul>
+    <ol type="A">
+      <li>
+          <h3><a href="https://ru.wikipedia.org/wiki/Азотная_кислота">Азотная кислота</a></h3>
+      </li>
+      <li>
+          <h3><a href="https://kubsu.ru/">КубГУ</a></h3> 
+      </li>
+   </ol>
+    <!--№20-->
+   <ul>
+   <li>
+      <h3><a href="ftp://user:pass666@Dealer.ru/Theams/xyz.txt">Ссылка на файл на сервере FTP</a></h3> <!--№21-->
+      <!--№21-->
+    </li>
+   </ul>
+
+   <table id="table">
+    <tbody>
+    <tr>
+      <th>Coulumn 1</th> <th>Coulumn 2</th> <th>Coulumn 3</th> <th>Coulumn 4</th>
+    </tr>
+    <tr>
+      <td colspan="2">Part 1-1 + 1-2</td> <td>Part 1-3</td> <td>Part 1-4</td>
+    </tr>
+    <tr>
+      <td>Part 2-1</td> <td>Part 2-2</td> <td colspan="2">Part 2-3 + 2-4</td>
+    </tr>
+    <tr>
+      <td>Part 3-1</td> <td>Part 3-2</td> <td>Part 3-3</td> <td>Part 3-4</td>
+    </tr>
+    <tr>
+      <td>Part 4-1</td> <td>Part 4-2</td> <td>Part 4-3</td> <td>Part 4-4</td>
+    </tr>
+    <tr>
+      <td>Part 5-1</td> <td>Part 5-2</td> <td colspan="2">Part 5-3 + 5-4</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+    <h2>Анкета</h2>
+
+    <form action="/"
+      method="POST"
+      id="form">
+
+      <label>
+        ФИО:<br />
+        <input name="field-name-1"
+          placeholder="Иванов Иван Иванович" />
+      </label><br />
+
+      <label>
+        Почта (email):<br />
+        <input name="field-email"
+          type="email"
+          placeholder="Введите вашу почту" />
+      </label><br />
+
+      <label>
+        Дата рождения:<br />
+        <input name="field-date"
+          value="2000-01-01"
+          type="date" />
+      </label><br />
+
+      <label>
+        Биография:<br />
+        <textarea name="field-name-2">"Введите текст"</textarea>
+      </label><br />
+
+
+      <label>
+        Любимый язык программирования:
+        <br />
+        <select name="field-name-4[]"
+          multiple="multiple">
+          <option value="Значение1">Pascal</option>
+          <option value="Значение2" selected="selected">C</option>
+          <option value="Значение3" selected="selected">C++</option>
+          <option value="Значение4" selected="selected">JavaScript</option>
+          <option value="Значение5" selected="selected">PHP</option>
+          <option value="Значение6" selected="selected">Java</option>
+          <option value="Значение7" selected="selected">Haskel</option>
+          <option value="Значение8" selected="selected">Clojure</option>
+          <option value="Значение9" selected="selected">Prolog</option>
+          <option value="Значение10" selected="selected">Scala</option>
+        </select>
+      </label><br />
+
+      Пол:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-1" value="Значение1" />
+        Мужской</label>
+      <label><input type="radio"
+        name="radio-group-1" value="Значение2" />
+        Женский</label><br />
+
+      <br />
+      <label><input type="checkbox" checked="checked"
+        name="check-1" />
+        С контрактом ознакомлен(а)</label><br />
+
+      <input type="submit" value="Сохранить" />
+    </form>
+  </div>
+  <footer>
+  <p></p>(с) Артём Федотов, 2 курс, ФКТиПМ</p>
+</footer>
+  </body>
+
+</html> 
