@@ -1,4 +1,6 @@
-table {
+
+
+  table {
     text-align: center;
     margin: 0 auto;
     width: 60%;
@@ -26,6 +28,13 @@ table {
   nav {
     background-color:#5bad7f71;
     padding:30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav a{
+    margin: 0 auto;
   }
   
   header {
@@ -41,7 +50,8 @@ table {
     margin: 0 auto;
     margin-top:20px;
     padding:10px;
-  
+    display: flex;
+    flex-direction: column;
   }
   
   footer{
@@ -55,7 +65,25 @@ table {
   #logo{
     float:left;
     margin:10px;
-    width:100px;
-    height:100px;
+    width:200px;
+    height:200px;
+  }
+
+  #table{
+    order: 1;
   }
   
+  #url{
+    order: 2;
+  }
+  
+  form{
+    order: 3;
+  }
+
+  @media (min-width: 960px) {
+    nav{flex-direction:row}
+    #table{order: 2;}
+    #url{order: 1;}
+    form{order: 3;}
+  }
