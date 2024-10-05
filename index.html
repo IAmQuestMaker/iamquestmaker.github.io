@@ -6,21 +6,40 @@
     <meta charset="utf-8"/>
     <title>Мой проект</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body style="background-color: bisque;">
     <header>
-      <img id="logo" src="https://i.pinimg.com/736x/45/21/26/452126a1b2faf622db865962465c41e6.jpg" alt="strange_thing">
+      <div class="row">
+      <img class="p-2" id="logo" src="https://i.pinimg.com/736x/45/21/26/452126a1b2faf622db865962465c41e6.jpg" alt="strange_thing">
       <p>Мой проект</p>
+      </div>
     </header>
-    <nav>
-            <a href="#url">Ссылки</a>
-            <a href="#table">Таблица</a>
-            <a href="#form">Форма</a>
-          </nav>
-    <div class="main_body">
-    <div  id="url">
-    <ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light vw-90">
+      <div class="row container-fluid text-center">
+        <div class="col-md-4">
+          <a href="#hyper" class="nav-link">Ссылки</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#tables" class="nav-link">Таблица</a>
+        </div>
+        <div class="col-md-4">
+          <a href="#form" class="nav-link">Форма</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="main_body w-70 mx-auto p-2 mt-2">
+         <div  id="url">
+         <ul>
         <li>
           <h3><a href="http://kubsu.ru/">КубГУ по http</a></h3>
           <!--№1-->
@@ -80,8 +99,8 @@
         <li>
           <img src="https://sun6-22.userapi.com/impg/zNdA-6voYi6NY9M6b_1ZTB7ctKlGGxTF-UCuwA/tzIhfHWK09s.jpg?size=604x410&quality=96&sign=367554c696e5406cc25ec13e9e462be2&type=album" width="300" height="225" alt="" usemap="#Tik">
           <map name="Tik" id="Tik">
-            <area shape="circle" coords="30,225,90" href="https://kubsu.ru/" alt="s1">
-            <area shape="rect" coords="60,30,75,90" href="undergrownd.html" alt="s2">
+            <area shape="circle" coords="30, 225, 90" href="https://kubsu.ru/" alt="s1">
+            <area shape="rect" coords="60, 30, 75, 90" href="undergrownd.html" alt="s2">
           </map>
           <!--№15-->
         </li>
@@ -217,8 +236,9 @@
 
       <input type="submit" value="Сохранить" />
     </form>
+    </div>
   </div>
-  <footer>
+  <footer class="mt-5 p-2">
   <p>(с) Артём Федотов, 2 курс, ФКТиПМ</p>
   </footer>
   </body>
