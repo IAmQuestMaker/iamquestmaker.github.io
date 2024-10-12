@@ -81,6 +81,10 @@
     order: 3;
   }
 
+  #result{
+    order: 3;
+  }
+
   @media (min-width: 960px) {
     nav{flex-direction:row}
     #table{order: 2;}
