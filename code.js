@@ -26,7 +26,7 @@
   });
 
   window.onload = function () { 
-    let form = document.getElementById("form"); 
+    let form = document.getElementById("form1"); 
     let inp = document.getElementById("amount"); 
     let t1 = document.getElementById("tovar1"); 
     let t2 = document.getElementById("tovar2"); 
@@ -45,22 +45,22 @@
             let ss;
             switch (id) {
             case 1:
-                s = p * t1.getAttribute("price");
+                s = p * t1.getAttribute("value");
                 break;
             case 2:
                 ss = select.options[select.selectedIndex];
-                s = p * ss.getAttribute("price");
+                s = p * ss.getAttribute("value");
                 break;
             case 3:
-                s = p * t3.getAttribute("price");
+                s = p * t3.getAttribute("value");
                 if (o1.checked) {
-                    s += p * o1.getAttribute("price");
+                    s += p * o1.getAttribute("value");
                 }
                 if (o2.checked) {
-                        s += p * o2.getAttribute("price");
+                        s += p * o2.getAttribute("value");
                 }
                 if (o3.checked) {
-                    s += p * o3.getAttribute("price");
+                    s += p * o3.getAttribute("value");
                 }
                 break;
             }
