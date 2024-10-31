@@ -111,3 +111,22 @@
     });
 };
 
+$(document).ready(function(){
+    $('.multiple-items').slick({
+        infinite: false,
+        dots: true,
+        slidesToShow: 3,
+        speed: 300,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+            }
+          ]
+    });
+  });
