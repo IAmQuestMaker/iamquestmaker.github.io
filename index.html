@@ -8,6 +8,8 @@
         display: none;
       }
     </style>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <meta charset="utf-8"/>
     <title>Мой проект</title>
     <link rel="stylesheet" href="style.css">
@@ -182,6 +184,12 @@
   </form>
   <output id="result"></output>
 
+  <div class="your-class">
+    <div>My content</div>
+    <div>My content</div>
+    <div></div>
+  </div>
+
   <form id="form1">
     <div>
       <input type = "text" id = "amount">
@@ -285,6 +293,14 @@
   <p>(с) Артём Федотов, 2 курс, ФКТиПМ</p>
   </footer>
   <script src="code.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  $.ready(function(){
+    $('.your-class').slick({
+      setting-name: setting-value
+    });
+  });
   </body>
 
 </html> 
