@@ -118,7 +118,7 @@ $(document).ready(function(){
         slidesToShow: 3,
         speed: 300,
         slidesToScroll: 1,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
         responsive: [
             {
               breakpoint: 1024,
