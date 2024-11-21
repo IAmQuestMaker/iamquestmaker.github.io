@@ -186,11 +186,11 @@
 
   <div class="container">
     <div class="slider multiple-items">
-      <div class="slide"><img src="img/Cat_with_tonge.jpg" alt="cwt"></div>
-      <div class="slide"><img src="img/Interested_cat.jpg" alt="cc"></div>
-      <div class="slide"><img src="img/Sussy_cat.jpg" alt="tc"></div>
-      <div class="slide"><img src="img/Angry_cat.jpg" alt="ac"></div>
-      <div class="slide"><img src="img/Froggy_cat.jpg" alt="fc"></div>
+      <div class="slide"><img src="img/Cat with tonge.jpg" alt="cwt"></div>
+      <div class="slide"><img src="img/Interested cat.jpg" alt="cc"></div>
+      <div class="slide"><img src="img/Sussy cat.jpg" alt="tc"></div>
+      <div class="slide"><img src="img/Angry cat.jpg" alt="ac"></div>
+      <div class="slide"><img src="img/Froggy cat.jpg" alt="fc"></div>
     </div>
   </div>
   <form id="form1">
@@ -290,6 +290,28 @@
 
       <input type="submit" value="Сохранить" />
     </form>
+    <button id="open-modal">Открыть форму обратной связи</button>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-modal">✖</span>
+        <h2>Обратная связь</h2>
+        <form id="feedback-form">
+            <input name="FIO" type="text" id="name" placeholder="ФИО" required>
+            <input name="email" type="email" id="email" placeholder="Email" required>
+            <input name="tel" type="tel" id="phone" placeholder="Телефон" required>
+            <input name="organization" type="text" id="organization" placeholder="Организация" required>
+            <textarea name="message" id="message" placeholder="Сообщение" required></textarea>
+            <label>
+                <input name="checkbox" type="checkbox" id="consent" required>
+                Согласен с политикой обработки персональных данных
+            </label>
+            <button class="send" type="submit">Отправить</button>
+            <div class="error" id="error-message">Произошла ошибка. Попробуйте снова.</div>
+            <div class="success" id="success-message">Ваше сообщение отправлено!</div>
+        </form>
+    </div>
+</div>
     </div>
   </div>
   <footer class="mt-5 p-2">
