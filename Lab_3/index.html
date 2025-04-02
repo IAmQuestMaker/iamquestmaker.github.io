@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Мой проект</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body style="background-color: bisque;">
+    <header>
+      <div class="row">
+      <img class="p-2" id="logo" src="https://i.pinimg.com/736x/45/21/26/452126a1b2faf622db865962465c41e6.jpg" alt="strange_thing">
+      <p>Мой проект</p>
+      </div>
+    </header>
+
+    
+
+    <form action="index.php"
+      method="POST"
+      id="form">
+
+      <h2>Анкета</h2>
+
+      <label>
+        ФИО:<br />
+        <input name="name" id="name" type="text"
+          placeholder="Иванов Иван Иванович" />
+      </label><br />
+
+      <label>
+        Телефон:<br>
+        <input type="tel" placeholder="+7(999)123-45-67" name="phone" id="phone">
+      </label><br>
+
+      <label>
+        Почта (email):<br />
+        <input name="email" id="email"
+          type="email"
+          placeholder="Введите вашу почту" />
+      </label><br />
+
+      <label>
+        Дата рождения:<br />
+        <input name="birthdate" id="birthdate"
+          value="2000-01-01"
+          type="date" />
+      </label><br />
+
+      <label>
+        Биография:<br />
+        <textarea placeholder="Введите текст" id="bio" name="bio"></textarea>
+      </label><br />
+
+
+      <label>
+        Любимый язык программирования:
+        <br />
+        <select id="languages" name="languages[]"
+          multiple="multiple" required>
+          <option value="Pascal">Pascal</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="PHP">PHP</option>
+          <option value="Java">Java</option>
+          <option value="Haskel">Haskel</option>
+          <option value="Clojure">Clojure</option>
+          <option value="Prolog">Prolog</option>
+          <option value="Scala">Scala</option>
+        </select>
+      </label><br />
+
+      Пол:<br />
+      <label><input type="radio" checked="checked" id="male"
+        name="gender" value="male" />
+        Мужской</label>
+      <label><input type="radio" id="female"
+        name="gender" value="female" />
+        Женский</label><br />
+
+      <br />
+      <label><input type="checkbox"
+         name="contract_accepted" id="contract_accepted"/>
+        С контрактом ознакомлен(а)</label><br />
+
+      <input type="submit" name="save" />Сохранить
+    </form>
+
+</div>
+    </div>
+  </div>
+  <footer class="mt-5 p-2">
+  <p>(с) Артём Федотов, 2 курс, ФКТиПМ</p>
+  </footer>
+  <script src="code.js"></script>
+  <script src="https//code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  
+  </body>
+
+</html> 
