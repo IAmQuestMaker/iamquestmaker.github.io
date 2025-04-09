@@ -12,6 +12,14 @@ try {
 } catch (PDOException $e) {
     die("Ошибка подключения к БД: " . $e->getMessage());
 }
+
+// Проверяем, был ли успешный submit
+if (isset($_GET['success']) && $_GET['success'] == 1) {
+    echo '<div class="success-message" style="padding: 15px; margin: 20px 0; border: 1px solid #4CAF50; background-color: #DFF2BF; color: #4CAF50; border-radius: 4px;">
+            Форма успешно отправлена! Спасибо за вашу заявку.
+          </div>';
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = [];
     if (!empty($errors)) {
@@ -36,36 +44,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ':contract' => isset($_POST['contract_accepted']) ? 1 : 0
         ]);
         $applicationId = $pdo->lastInsertId();
-$validLanguages = ['Pascal', 'C', 'C++', 'JavaScript', 'PHP', 'Python', 'Java', 'Haskell', 'Clojure', 'Prolog', 'Scala'];
-$selectedLanguages = array_intersect($_POST['languages'] ?? [], $validLanguages);
+        
+        $validLanguages = ['Pascal', 'C', 'C++', 'JavaScript', 'PHP', 'Python', 'Java', 'Haskell', 'Clojure', 'Prolog', 'Scala'];
+        $selectedLanguages = array_intersect($_POST['languages'] ?? [], $validLanguages);
 
-if (!empty($selectedLanguages)) {
-    $placeholders = rtrim(str_repeat('?,', count($selectedLanguages)), ',');
-    $stmt = $pdo->prepare("SELECT id, name FROM languages WHERE name IN ($placeholders)");
-    $stmt->execute($selectedLanguages);
-    $existingLanguages = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
-    $missingLanguages = array_diff($selectedLanguages, array_keys($existingLanguages));
-    if (!empty($missingLanguages)) {
-        $stmt = $pdo->prepare("INSERT IGNORE INTO languages (name) VALUES (?)");
-        foreach ($missingLanguages as $lang) {
-            $stmt->execute([$lang]);
-            if ($stmt->rowCount() > 0) {
-                $existingLanguages[$lang] = $pdo->lastInsertId();
-            } else {
-                $stmtSelect = $pdo->prepare("SELECT id FROM languages WHERE name = ?");
-                $stmtSelect->execute([$lang]);
-                $existingLanguages[$lang] = $stmtSelect->fetchColumn();
+        if (!empty($selectedLanguages)) {
+            $placeholders = rtrim(str_repeat('?,', count($selectedLanguages)), ',');
+            $stmt = $pdo->prepare("SELECT id, name FROM languages WHERE name IN ($placeholders)");
+            $stmt->execute($selectedLanguages);
+            $existingLanguages = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+            $missingLanguages = array_diff($selectedLanguages, array_keys($existingLanguages));
+            if (!empty($missingLanguages)) {
+                $stmt = $pdo->prepare("INSERT IGNORE INTO languages (name) VALUES (?)");
+                foreach ($missingLanguages as $lang) {
+                    $stmt->execute([$lang]);
+                    if ($stmt->rowCount() > 0) {
+                        $existingLanguages[$lang] = $pdo->lastInsertId();
+                    } else {
+                        $stmtSelect = $pdo->prepare("SELECT id FROM languages WHERE name = ?");
+                        $stmtSelect->execute([$lang]);
+                        $existingLanguages[$lang] = $stmtSelect->fetchColumn();
+                    }
+                }
+            }
+
+            $stmt = $pdo->prepare("INSERT IGNORE INTO application_languages (application_id, language_id) VALUES (?, ?)");
+            foreach ($existingLanguages as $langId) {
+                $stmt->execute([$applicationId, $langId]);
             }
         }
-    }
-
-    $stmt = $pdo->prepare("INSERT IGNORE INTO application_languages (application_id, language_id) VALUES (?, ?)");
-    foreach ($existingLanguages as $langId) {
-        $stmt->execute([$applicationId, $langId]);
-    }
-}
         $pdo->commit();
-        header("Location: index.html?success=1");
+        header("Location: " . $_SERVER['PHP_SELF'] . "?success=1");
         exit;
     } catch (PDOException $e) {
         if ($pdo->inTransaction()) {
