@@ -1,4 +1,4 @@
-CREATE TABLE applications (
+CREATE TABLE applications1 (
     id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(150) NOT NULL,
     phone VARCHAR(15) NOT NULL,
@@ -10,20 +10,20 @@ CREATE TABLE applications (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS languages (
+CREATE TABLE IF NOT EXISTS languages1 (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL UNIQUE
 );
 
-INSERT IGNORE INTO languages (name) VALUES 
+INSERT IGNORE INTO languages1 (name) VALUES 
 ('Pascal'), ('C'), ('C++'), ('JavaScript'), ('PHP'),
 ('Python'), ('Java'), ('Haskell'), ('Clojure'), 
 ('Prolog'), ('Scala');
 
-CREATE TABLE IF NOT EXISTS application_languages (
+CREATE TABLE IF NOT EXISTS application1_languages (
     application_id INT UNSIGNED NOT NULL,
     language_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (application_id, language_id),
-    FOREIGN KEY (application_id) REFERENCES applications(id) ON DELETE CASCADE,
-    FOREIGN KEY (language_id) REFERENCES languages(id)
+    FOREIGN KEY (application_id) REFERENCES applications1(id) ON DELETE CASCADE,
+    FOREIGN KEY (language_id) REFERENCES languages1(id)
 );
